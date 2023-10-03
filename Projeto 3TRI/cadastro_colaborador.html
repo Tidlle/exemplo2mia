@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Colaboradores/Psicólogos</title>
+    <!-- Inclua os links CSS do Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<h1>Cadastro de Colaboradores/Psicólogos</h1>
+<form id="colaboradorForm">
+    <div class="form-group">
+        <label for="nomeColaborador">Nome:</label>
+        <input type="text" class="form-control" id="nomeColaborador" required>
+    </div>
+
+    <div class="form-group">
+        <label for="emailColaborador">Email:</label>
+        <input type="email" class="form-control" id="emailColaborador" required>
+    </div>
+
+    <div class="form-group">
+        <label for="celularColaborador">Celular:</label>
+        <input type="tel" class="form-control" id="celularColaborador" required>
+    </div>
+
+    <div class="form-group">
+        <label for="senhaColaborador">Senha:</label>
+        <input type="password" class="form-control" id="senhaColaborador" required>
+    </div>
+<div>
+    <div class="form-group">
+        <label for="enderecoColaborador">Endereço:</label>
+        <input type="text" class="form-control" id="enderecoColaborador" required>
+    </div>
+
+    <div class="form-group">
+        <label for="bairroColaborador">Bairro:</label>
+        <input type="text" class="form-control" id="bairroColaborador" required>
+    </div>
+
+    <div class="form-group">
+        <label for="complementoColaborador">Complemento:</label>
+        <input type="text" class="form-control" id="complementoColaborador">
+    </div>
+</div>
+    <div class="form-row">
+        <div class="form-group col-md-2">
+            <label for="numero">Número:</label>
+            <input type="text" class="form-control" id="numero" required>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="cep">CEP:</label>
+            <input type="text" class="form-control" id="cep" required>
+        </div>
+
+        <div class="form-group col-md-2">
+            <label for="uf">UF:</label>
+            <input type="text" class="form-control" id="uf" required>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="graduacao">Nível de Graduação (Psicologia):</label>
+            <input type="text" class="form-control" id="graduacao">
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="universidade">Universidade:</label>
+            <input type="text" class="form-control" id="universidade">
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+</form>
+</div>
+
+<!-- Inclua os scripts JS do Bootstrap -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<script>
+     const colaboradores = [];
+     
+     const colaboradorForm = document.getElementById('colaboradorForm');
+        colaboradorForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const colaborador = {
+                nome: document.getElementById('nomeColaborador').value,
+                email: document.getElementById('emailColaborador').value,
+                celular: document.getElementById('celularColaborador').value,
+                senha: document.getElementById('senhaColaborador').value,
+                endereco: document.getElementById('enderecoColaborador').value,
+                bairro: document.getElementById('bairroColaborador').value,
+                complemento: document.getElementById('complementoColaborador').value,
+                numero: document.getElementById('numeroColaborador').value,
+                cep: document.getElementById('cepColaborador').value,
+                uf: document.getElementById('ufColaborador').value,
+                graduacao: document.getElementById('graduacao').value,
+                universidade: document.getElementById('universidade').value,
+            };
+            colaboradores.push(colaborador);
+            console.log('Colaborador cadastrado:', colaborador);
+            colaboradorForm.reset();
+        });
+</script>
